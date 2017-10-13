@@ -40,4 +40,9 @@ public class StringCalculatorTest{
 		assertEquals(2, StringCalculator.add("1001,2"));
 	}
 
+	@Test
+	public void testSomeDelimeters(){
+		assertEquals(11, StringCalculator.add("//!,1,2,3!5"));
+	}
+
 }
