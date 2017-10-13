@@ -34,4 +34,10 @@ public class StringCalculatorTest{
 	public void ExceptionWithNegativeNumbers(){
 		StringCalculator.add("-1,2,-3,4,-5");
 	}
+
+	@Test
+	public void testBiggerThan1K(){
+		assertEquals(2, StringCalculator.add("1001,2"));
+	}
+
 }

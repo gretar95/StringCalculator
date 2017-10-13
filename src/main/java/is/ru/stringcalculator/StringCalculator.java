@@ -22,21 +22,27 @@ public class StringCalculator{
 	private static int sum(String[] numbers){
 		int total = 0;
 		for(String number : numbers){
-			total += toInt(number);
+			//total += toInt(number);
+			if(toInt(number) > 1000){
+				continue;
+			}
+			else{
+				total += toInt(number);
+			}
 		}
 		return total;
 	}
 
 	private static void negatives(String[] numbers){
 		String numOfNeg = "";
-				for(String nums : numbers){
-					if(toInt(nums) < 0){
-						numOfNeg += nums + " ";
-					}
-				}
+		for(String nums : numbers){
+			if(toInt(nums) < 0){
+				numOfNeg += nums + " ";
+			}
+		}
 
-				if(!numOfNeg.equals("")){
+		if(!numOfNeg.equals("")){
 					throw new IllegalArgumentException("Negatives not allowed: " + numOfNeg);
-				}
+		}
 	}
 }
