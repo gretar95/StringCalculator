@@ -29,4 +29,9 @@ public class StringCalculatorTest{
 	public void testNewLineAndComma(){
 		assertEquals(6, StringCalculator.add("1,2\n3"));
 	}
+
+	@Test(expected = IllegalArgumentException.class)
+	public void ExceptionWithNegativeNumbers(){
+		StringCalculator.add("-1,2,-3,4,-5");
+	}
 }
