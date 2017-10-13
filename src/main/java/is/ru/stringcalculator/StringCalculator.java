@@ -9,17 +9,7 @@ public class StringCalculator{
 		else
 			if(text.contains(",")){
 				String[] numbers = text.split(",|\n");
-				String numOfNeg = "";
-				for(String nums : numbers){
-					if(toInt(nums) < 0){
-						numOfNeg += nums + " ";
-					}
-				}
-
-				if(!numOfNeg.equals("")){
-					throw new IllegalArgumentException("Negatives not allowed: " + numOfNeg);
-				}
-
+				negatives(numbers);
 				return sum(numbers);
 			}
 			return 1;
@@ -35,5 +25,18 @@ public class StringCalculator{
 			total += toInt(number);
 		}
 		return total;
+	}
+
+	private static void negatives(String[] numbers){
+		String numOfNeg = "";
+				for(String nums : numbers){
+					if(toInt(nums) < 0){
+						numOfNeg += nums + " ";
+					}
+				}
+
+				if(!numOfNeg.equals("")){
+					throw new IllegalArgumentException("Negatives not allowed: " + numOfNeg);
+				}
 	}
 }
